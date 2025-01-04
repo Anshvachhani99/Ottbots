@@ -114,14 +114,14 @@ def extractyt(url=None,ci=None,is_dngplay=False,is_sliv=False,is_hs=False,is_zee
         url = f'"{url}"'
       #  token = requests.get("https://ccroute.vercel.app/sliv").json()["token"]
         tok = "47c6938a7c5c4bd48d503e330c9e6512-1735474637849"
-        subprocess.run(f"yt-dlp --allow-unplayable-formats --add-headers x-playback-session-id:{tok} --no-check-certificate --proxy http://toonrips:xipTsP9H9s@103.171.51.246:50100 --dump-json {url} > info{ci}.json",shell=True)
+        subprocess.run(f"yt-dlp --allow-unplayable-formats --add-headers x-playback-session-id:{tok} --no-check-certificate --dump-json {url} > info{ci}.json",shell=True)
 
     elif is_hs:
         url = f'"{url}"'
-        subprocess.run(f"yt-dlp --allow-unplayable-formats --no-check-certificate --proxy http://toonrips:xipTsP9H9s@103.171.51.246:50100 --dump-json {url} > info{ci}.json",shell=True)
+        subprocess.run(f"yt-dlp --allow-unplayable-formats --no-check-certificate --dump-json {url} > info{ci}.json",shell=True)
     else:
         url = f'"{url}"'
-        subprocess.run(f"yt-dlp --allow-unplayable-formats --no-check-certificate --proxy http://toonrips:xipTsP9H9s@103.171.51.246:50100 --dump-json {url} > info{ci}.json",shell=True)
+        subprocess.run(f"yt-dlp --allow-unplayable-formats --no-check-certificate --dump-json {url} > info{ci}.json",shell=True)
     import json
     with open(f'info{ci}.json', 'r') as f:
         data = json.load(f)
@@ -358,7 +358,6 @@ def download_vod_ytdlp(url, message, content_id, user_id, is_multi=False, has_dr
 
         else:
             base_url = f"https://www.jiocinema.com/movies/h/{ci}"
-    ydl_opts["proxy"] = "http://toonrips:xipTsP9H9s@103.171.51.246:50100"
     ydl_opts["no_check_certificate"] = True
     
     
@@ -933,7 +932,7 @@ def youtube_link(url, message, ci, is_series=False, att=0,is_multi=False,has_drm
                       "Referer": "https://www.zee5.com/",
                       "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
             }
-            proxy = {'http':'http://toonrips:xipTsP9H9s@103.171.51.246:50100','https':"http://toonrips:xipTsP9H9s@103.171.51.246:50100"}
+            proxy = {'http':'','https':""}
             r = requests.get(url, headers=headersy, proxies=proxy)
             import logging
             logging.info(r)
@@ -1022,7 +1021,7 @@ def youtube_link(url, message, ci, is_series=False, att=0,is_multi=False,has_drm
                       "Referer": "https://www.hotstar.com/",
                       "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
             }
-            proxy = {'http':'http://toonrips:xipTsP9H9s@103.171.51.246:50100','https':"http://toonrips:xipTsP9H9s@103.171.51.246:50100"}
+            proxy = {'http':'','https':""}
       
             r = requests.get(url, headers=headersy,proxies=proxy)
             import logging

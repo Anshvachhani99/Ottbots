@@ -4,7 +4,7 @@ import xmltodict
 # Request object with Session maintained
 session = requests.Session()
 #session.proxies.update({'http': "http://toonrips:xipTsP9H9s@103.171.51.246:50100"})
-session.proxies.update({'http': "")
+session.proxies.update({'http': ""})
 proxy = {'http':'','https':""}
 # Common Headers for Session
 headers = {

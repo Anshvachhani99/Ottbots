@@ -130,8 +130,8 @@ def extractyt(url=None,ci=None,is_dngplay=False,is_sliv=False,is_hs=False,is_zee
 # Generate main config file from definition config before starting
 
 app = Client(
-    "Hinata_ott_downloader_bot",
-    bot_token="8198617358:AAEEezx06YR3VOk1Q15FElzzMZLKHLb8hoU",
+    "MAHESHAUTOAPPROVRBOT",
+    bot_token="6845580485:AAEfqaoqPHo__jmJCZ0Q3xGcPhhXTN_GUZ8",
     api_id="5360874",
     api_hash="4631f40a1b26c2759bf1be4aff1df710",
     sleep_threshold=30

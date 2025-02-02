@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import utils
+import asyncio
 import yt_dlp
 import subprocess
 from pyrogram import Client, filters, idle
@@ -1567,4 +1568,4 @@ def main():
     print("bot started")
     idle()
     app.stop()
-app.loop.run_until_complete(main())
+asyncio.run(main())
